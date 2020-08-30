@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5组合选择器</title>
+
+    <style>
+        .list li {margin: 5px;}
+        ul li a{text-decoration: none}
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <script>
+        $(function(){
+            // 所有ul 下的所有子元素和孙元素
+            // $('ul *').css('border', '1px solid red');
+            // 所有ul下的子元素
+            // $('ul > li').css('border', '1px solid red');
+            // 选择所有兄弟元素
+            // $('#hello~*').css('border', '1px solid red');
+            // 选择兄弟元素中的li
+            // $('#hello~li').css('border', '1px solid red');
+            // 选择兄弟元素中的第一个li
+            $('#hello+li').css('border', '1px solid red');
+
+        })
+    </script>
+
+</head>
+<body>
+
+    <p>组合选择器的组合符： 1. 后代组合符： 空格和 >  2. 兄弟： ~ 和 +</p>
+
+    <ul class='list'>
+        <li>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网1</a></li>
+        <li>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网2</a></li>
+        <li>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网3</a></li>
+        <li>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网4</a></li>
+        <li id='hello'>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网5</a></li>
+        <li>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网6</a></li>
+        <li>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网7</a></li>
+        <li>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网8</a></li>
+        <li>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网9</a></li>
+        <li>欢迎访问:<a href="" ref="http://www.php.cn">PHP中文网10</a></li>
+
+        <div>
+            <li>我是列表项1</li>
+            <li>我是列表项2</li>
+            <li>我是列表项3</li>
+            <li>我是列表项4</li>
+            <li>我是列表项5</li>
+        </div>
+
+        <p>PHP中文网是永久免费的学习平台~~</p>
+        <p>PHP中文网是永久免费的学习平台~~</p>
+        <p>PHP中文网是永久免费的学习平台~~</p>
+        <p>PHP中文网是永久免费的学习平台~~</p>
+        <p>PHP中文网是永久免费的学习平台~~</p>
+        
+
+    </ul>
+</body>
+</html>
