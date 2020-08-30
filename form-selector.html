@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        //文档就绪函数
+        $(function(){
+        // //选择所有文本域，并添加红色边框
+        // $("input:text").css('border', "1px solid red");
+        //// 使用属性选择器，实现上面的操作
+        // $('[type="text"]').css('border', '1px solid blue');
+        // //修改input框中placeholder的内容
+        // $('input:password').attr('placeholder', "至少8到20位");
+        //选择所有复选框，添加一个绿色阴影
+        // $('input:checkbox').css('box-shadow', "2px 2px 2px green");
+        //将含有默认值的复选框设置位红色阴影
+        // $('input:checked').css('box-shadow', '2px 2px 2px red');
+        // 选择按钮，改变背景色为天蓝色
+        // $('button').css('background-color', 'skyblue')
+        // $(':button').css('background-color', 'red');
+        })
+        
+    </script>
+</head>
+<body>
+    <h2>3表单过滤器</h2>
+    <h3>用户注册</h3>
+    <form action="">
+        用户名：<input type="text" name="" id="" placeholder="请输入用户名"><br>
+        用户密码: <input type="password" placeholder="6到8位"> <br>
+        感兴趣的内容：<br>
+                    <input type="checkbox" name="hobby" value="读书">读书 <br>
+                    <input type="checkbox" name="hobby" value="游戏"> 游戏 <br>
+                    <input type="checkbox" name="hobby" value="旅游">  旅游 <br>
+                    <input type="checkbox" name="hobby" value="编程" checked> 编程 <br>
+        <button type="sbumit">提交</button>
+        <!-- button默认类型submit -->
+        <input type="text" disabled placeholder="这是禁用的">
+    </form>
+</body>
+</html>
