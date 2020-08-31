@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6选择器组</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <style>
+        .green{color:green;}
+        .red{color:red;}
+    </style>
+
+    <script>
+        $(function(){
+            // 将标题设置为天蓝色，并取消加粗
+            $("h2, h3, h4").css({fontweight:"normal",
+                                color:"skyblue"});
+            // 支持带过滤器的简单选择器
+            $('p.green, div.red').css({fontSize:'20px',
+                                    fontweight:'900',
+                                    color:'#77F'})
+            // 支持组选择器
+            $('p>span, div strong').css('color', 'red');
+            
+        })
+    </script>
+</head>
+
+<body>
+    <h2>6选择器组</h2>
+    <hr>
+    <h3>PHP中文网</h3>
+    <h4>PHP中文网</h4>
+    <h5>PHP中文网</h5>
+    <p class="green"><span>永久免费</span>的PHP学习平台</p>
+    <div class="red">jquery是一个<strong>高效易用</strong>的JAVASCRIPT框架</div>
+
+</body>
+</html>
