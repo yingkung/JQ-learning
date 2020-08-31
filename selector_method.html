@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7选取方法</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function(){
+            // 1.根据元素位置选择
+            // $('li').first().css('border', '1px solid red')
+            // $('li').last().css('border', '1px solid red')
+            // $('li').eq(0).css('border', '1px solid red')
+            // $('li').slice(1,4).css('border', '1px solid red')  // 给1，2，3都加上一个边框
+            // $('li').slice(1).css('border', '1px solid blue')
+            // $('li').slice(-3).css('border', '1px solid green')
+
+            // 2. 筛选元素 filter(), not()
+            // $('li').filter('.red').css('color', 'red')
+            // $('li').filter(function(index){
+            //     return index%2 ==0 ;
+            // }).css('border', '1px solid blue')
+            // $('li:even').css('border', '1px solid red')
+
+            // $('li').not(function(index){
+            //     return index%2 ==0;
+            // }).css('color', 'green')
+
+            // 3. 查找选中元素当作上下文
+            // $('li').find('strong').css('color', 'red')
+            // $('.red').next().first().css('color', 'blue')
+
+            // $('.red').prevAll().css('color', 'red')
+
+        })
+    </script>
+    <style>
+        li {margin:5px;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>0 - PHP中文网</li>
+        <li>1 - PHP中文网</li>
+        <li class="red">2 - PHP中文网</li>
+        <li>3 - PHP中文网</li>
+        <li class="red">4 - PHP中文网</li>
+        <li id="info">5 - PHP中文网</li>
+        <li>6 - <strong>PHP中文网</strong></li>
+        <li>7 - <strong>PHP中文网</strong></li>
+        <li>8 - 二级列表： 
+            <ol>
+                <li><strong>列表项</strong></li>
+                <li>列表项</li>
+                <li>列表项</li>
+            </ol>
+        </li>
+    </ul>
+
+
+
+</body>
+</html>
