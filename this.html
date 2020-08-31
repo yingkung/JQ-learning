@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8$(this)</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        //$(this)：返回当前jquery对象，与上下文相关
+        $(function(){
+            $('img').click(function(event){
+                alert($(this).attr('alt'))
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <img src="image/a.jpg" alt="京巴狗" width='100'>
+    <img src="image/b.jpg" alt="吉娃娃" width='100'>
+    <img src="image/c.jpg" alt="柴犬" width='100'>
+   
+</body>
+</html>
