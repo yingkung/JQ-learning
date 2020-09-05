@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-3 包装元素</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function(){
+            // 将选中的所有元素进行包装
+            // $('h3').wrap('<i></i>');
+            // 将h3的内容编程红色
+            // $('h3').wrapInner('<span style="color:red"></span>');
+            // 将所有h3元素放入一个div中
+            $('h3.demo').wrapAll('<div></div>')
+        })
+    </script>
+</head>
+<body>
+    <h3>PHP中文网</h3>
+    <h3>PHP中文网</h3>
+    <h3 class="demo">PHP中文网</h3>
+    <h3 class="demo">PHP中文网</h3>
+</body>
+</html>
