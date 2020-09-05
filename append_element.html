@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-1插入与替换</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function(){
+           $("#SiteName").click(function(){
+                // 将新元素添加到当前的jquery对象中
+            //    $(this).append("www.https.php.cn");
+               // 将新元素添加到当前jquery对象的后面
+            //    $(this).after('<h4>www.php.cn</h4>')
+            // after 添加的元素和h3是同级， append 添加的元素是h3的下一级
+            // 将新元素添加到当前对象前面，但是还在这个元素中
+            // $(this).prepend('<a href="http://www.php.cn">点击访问</a>')
+            // 将新元素添加到当前元素的前面， before()
+            // $(this).before("<h2>欢迎来到:</h2>")
+           }) 
+        })
+    </script>
+
+</head>
+<body>
+    <h3 id="SiteName">PHP中文网</h3>
+</body>
+</html>
