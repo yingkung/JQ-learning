@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+           // 添加一个div 元素
+           $(document.body).append("<div id='linklist'>友情链接</div>");
+           // 将a 元素复制到div中
+           $("a").clone().appendTo('#linklist');
+           // 在每个a标签后添加br
+           $('div >a').after('<br>');
+        })
+    </script>
+</head>
+<body>
+    <a href="www.https://php.cn">PHP中文网</a>
+    <a href="www.https://baidu.com">百度一下</a>
+    <a href="https://www.csdn.net/">CSDN</a>
+    <a href="https://www.jianshu.com/">简书</a>
+</body>
+</html>
