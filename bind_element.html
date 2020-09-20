@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-1 给元素绑定事件 </title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function(){
+            a = $('img').attr('alt');  //取出img的alt属性
+            $('h3').text(a);  //将img的alt属性内容添加到h3的内容中
+
+            // 1. 向页面中已经存在的元素添加事件： event()
+            // 点击图片，将图片替换成另一张，并同时修改h3 中的内容
+            $('img').click(function(event){
+                $(this).attr({'src': 'image/a.jpg', 'alt':'小狗'});  //修改图片
+                $('h3').text($('img').attr('alt'));  //修改h3中的内容
+            });
+
+            // 2. 用脚本创建的元素添加事件： bind()
+            // 点击按钮， 出现图片，点击图片，创建h3，并将图片的alt内容拷贝给h3
+            $('button').click(function(event){
+                $('div').html("<img id='tupian' src='image/b.jpg' alt='吉娃娃' width=100>")  // 在div中添加一个img元素
+                $('#tupian').bind('click', function(){
+                    $(this).after("<h3>"+$(this).attr('alt')+"</h3>");
+                })
+            })
+        });
+
+    </script>
+</head>
+<body>
+    <img src="1.jpg" alt="姑娘" width="100">
+    <h3></h3>
+    <button type="button" name="button">创建图像</button>
+    <div></div>
+</body>
+</html>
