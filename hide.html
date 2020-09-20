@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 6-1 显示与隐藏 </title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function(){
+            // 点击button 显示简介
+            var info = "<p>金毛巡回猎犬（Golden Retriever），原产于苏格兰，祖先有雪达犬血统，因有较强的游泳能力，\
+                        并能把猎物从水中叼回给主人，故最初用作狩猎及巡回被枪猎射落的水鸟，AKC分类属于运动犬组。</p>"
+            $('button').click(function(event){
+                // alert('当前对象：', $(this).html());
+                $(this).after(info);  // 将after 改成append
+                $(this).text('隐藏简介');
+                $(this).click(function(){
+                    var text = $(this).children().text()
+                    alert('当前点击对象下一个元素的内容为：', text);
+                    // $(this).next().text('xiaogou');
+                })
+            })
+        });
+
+    </script>
+</head>
+<body>
+    <img src="image/1.jpg" alt="小狗" width="200">
+    <button type="button" name='button' id='btn'>显示简介</button>
+</body>
+</html>
