@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-2 解除绑定事件 </title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function(){
+            // 向页面中已经存在的元素添加事件: event()
+            // 点击img元素，并随即切换成其他的图片
+            $('img').click(function(event){
+                var num = Math.floor(Math.random()*3+1);  // 生成一个变量，对应图片的名字
+                $(this).attr('src','image/'+num+'.jpg');
+                // 解除绑定
+                $(this).unbind('click');
+            })
+        });
+
+    </script>
+</head>
+<body>
+    <img src="1.jpg" width="100">
+    
+</body>
+</html>
