@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-3-2 向上滑动 </title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <style>
+        #wrap img{width: 250px;}
+        #content {width:250px; }
+    </style>
+    <script>
+        $(function(){
+            $('#wrap img').bind('click', function(){
+                $('#content').slideUp('slow');  //显示速度支持fast 或者数字， 如2000
+        
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="content">
+            <h3>姓名：赵丽颖</h3>
+            <p>生日：1987/10/16</p>
+            <p>
+                赵丽颖，1987年10月16日出生于河北省廊坊市，中国内地影视女演员、歌手。
+                2006年，因获得《雅虎搜星》比赛冯小刚组冠军而进入演艺圈 [1]  ；
+                同年，在冯小刚执导的广告片《跪族篇》中担任女主角 [2]  。
+            </p>
+        </div>
+        <img src="image/zly1.jpg" alt="">
+    </div>
+    
+</body>
+</html>
