@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-4 函数声明：命名函数 </title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function(){
+            // 点击图片， 在图片下方显示 name ， age ， 体重
+            $('img').click(show);
+            
+            // 定义show 这个函数
+            function show() {
+                // 创建要显示的信息
+                var info = "<div>姓名：happy<p>年龄：1</p><p>体重：5kg</p></div>"
+                $('img').after(info);
+                // 解绑, 防止多次点击造成多次添加info
+                $('img').unbind('click');
+            }
+            
+        });
+
+    </script>
+</head>
+<body>
+    <img src="1.jpg" width="100">
+    
+</body>
+</html>
