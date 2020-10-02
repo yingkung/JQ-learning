@@ -1,1 +1,0 @@
-ajax7-1 中 ， readyState= 4 不识别， 报错

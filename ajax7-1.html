@@ -13,15 +13,15 @@
                 //1. 获取XHR对象
                 var request = new XMLHttpRequest();
                 //2. 配置Ajax请求参数： 请求类型，请求的url资源， 请求方式（默认为True， 即异步方式）
-                alert(this.href.innerHTML);
+                alert(this.href);   // 此处不需要加this.href.innerHTML
                 request.open('GET', this.href, true);
                 // 3.将Ajax请求发送到服务器，GET请求不需要参数，可为空或者传入null
                 request.send(null);
                 // 4. Ajax对象的事件属性onreadystatechange, 不断监听服务器端的相应
                 request.onreadystatechange = function(){
                     // 5. 当请求状态为4， 并且相应代码是200时，表示服务器响应成功， 并返回了用户数据
-                    // if (requst.readyState == 4  && request.status == 200 ){
-                        if (request.status == 200 ){
+                    if ( request.readyState == 4  && request.status == 200 ){
+                        // if (request.status == 200 ){
                         // 6. 根据数据类型，来更新当前页面中的DOM节点的信息
                         // $('h3')[0].innerHTML = request.responseText;
                         document.getElementsByTagName('h3')[0].innerHTML = request.responseText;

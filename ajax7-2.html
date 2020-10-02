@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        window.onload = function(){
+            var aNodes = document.getElementsByTagName('a');   //获取所有a元素
+            // var content = document.getElementById('content');
+            for(var i=0; i < aNodes.length; i++){
+                aNodes[i].onclick = function(){
+                    var request = new XMLHttpRequest();  //创建xhr对象
+                    request.open('GET', this.href, true)  // 配置ajax请求
+                    request.send(null);  //发送ajax请求
+                    // 监听服务器响应，当服务器响应为200时，获取返回的内容，赋值给div
+                    request.onreadystatechange = function(){
+                        if (request.readyState == 4 && request.status == 200) {
+                            document.getElementById('content').innerHTML = request.responseText;  //注意getElementById只能得到唯一的一个返回值
+                            // 如果没有对应的id 返回值应该为空
+                        }
+                    }
+                    return false;
+                }  
+            } 
+        }
+    </script>
+</head>
+<body>
+    <h2>PHP中文网</h2>
+    <h2>ABC</h2>
+    <ul>
+        <li><a href="about.html">网站宗旨</a></li>
+        <li><a href="lesson.html">学习课程</a></li>
+        <li><a href="connect.html">联系我们</a></li>
+    </ul>
+    <div id="content"></div>
+</body>
+</html>
