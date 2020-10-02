@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-4-1 ajax直接解析json文件</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        // 定义一个json串
+        var data = {
+            "name":"yingkun",
+            "salary":'9999',
+            "lesson":['php', 'html', 'css', 'javascript', 'jquery'],
+            "website":{
+                "siteName":"PHP中文网",
+                "domain":"www.php.cn"
+            }
+        }
+        window.onload = function(){
+            document.getElementsByTagName('button')[0].onclick = function(){
+                // 获取页面元素
+                document.getElementById('name').innerHTML = data.name;
+                document.getElementById('salary').innerHTML = data.salary;
+                document.getElementById('lesson').innerHTML = data.lesson[4];
+                document.getElementById('siteName').innerHTML = data.website.siteName;
+                document.getElementById('domain').innerHTML = data.website.domain;
+            }
+        }
+    </script>
+    <style>
+        span{color:red}
+    </style>
+</head>
+<body>
+    <button type="button" name="button">我的信息</button>
+    <div>
+        <h3>姓名：<span id='name'></span></h3>
+        <h3>工资：<span id='salary'></span></h3>
+        <h3>课程: <span id='lesson'></span></h3>
+        <h3>网站：<span id='siteName'></span></h3>
+        <h3>域名：<span id='domain'></span></h3>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+    "name":"yingkun",
+    "salary":9999,
+    "lesson":["php", "html", "css", "javascript", "jquery"],
+    "website":{
+        "siteName":"PHP中文网",
+        "domain":"www.php.cn"
+    }
+}

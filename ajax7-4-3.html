@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-4-2 从json文件中获取数据</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        // var data = eval("("+json+")");
+        // var data = JSON.parse(json);
+        window.onload = function(){
+            document.getElementsByTagName('button')[0].onclick = function(){
+                // 使用ajax获取json文件中的内容，并插入到当前html中
+                var request = new XMLHttpRequest();
+                request.open('GET', 'demo.json', true);
+                request.send(null);
+                request.onreadystatechange = function(){
+                    if (request.readyState==4 && request.status==200){
+                        var data = JSON.parse(request.responseText);
+                        // 获取页面元素
+                        document.getElementById('name').innerHTML = data.name;
+                        document.getElementById('salary').innerHTML = data.salary;
+                        document.getElementById('lesson').innerHTML = data.lesson[4];
+                        document.getElementById('siteName').innerHTML = data.website.siteName;
+                        document.getElementById('domain').innerHTML = data.website.domain;
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        span{color:red}
+    </style>
+</head>
+<body>
+    <button type="button" name="button">我的信息</button>
+    <div>
+        <h3>姓名：<span id='name'></span></h3>
+        <h3>工资：<span id='salary'></span></h3>
+        <h3>课程: <span id='lesson'></span></h3>
+        <h3>网站：<span id='siteName'></span></h3>
+        <h3>域名：<span id='domain'></span></h3>
+    </div>
+</body>
+</html>
