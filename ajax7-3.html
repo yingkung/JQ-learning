@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-3 ajax读取xml文件</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        // 文档就绪函数
+        window.onload = function(){
+            document.getElementsByTagName('a')[0].onclick = function(){
+                var request = new XMLHttpRequest();  //创建XHR对象
+                request.open('GET', this.href +'?='+(new Date()), true);
+                request.send(null);
+                request.onreadystatechange = function(){
+                    if (request.readyState == 4 && request.status == 200){
+                        // 获取xml中所有标签的值
+                        var result = request.responseXML;
+                        var name = result.getElementsByTagName('name')[0].childNodes[0].nodeValue
+                        var sex = result.getElementsByTagName('sex')[0].childNodes[0].nodeValue
+                        var lesson = result.getElementsByTagName('lesson')[0].childNodes[0].nodeValue
+                        var job = result.getElementsByTagName('job')[0].childNodes[0].nodeValue
+                        var work = result.getElementsByTagName('work')[0].childNodes[0].nodeValue
+
+                        // 将xml中的值插入到当前页面对应的DOM节点中
+                        document.getElementById('name').innerHTML=name;
+                        document.getElementById('sex').innerHTML=sex;
+                        document.getElementById('lesson').innerHTML=lesson;
+                        document.getElementById('job').innerHTML=job;
+                        document.getElementById('work').innerHTML=work;
+                    }
+                }
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="who.xml">我是谁？</a>
+    <div>
+        <p id='name'></p>
+        <p id='sex'></p>
+        <p id='lesson'></p>
+        <p id='job'></p>
+        <p id='work'></p>
+    </div>
+
+</body>
+</html>
