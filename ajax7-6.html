@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-6 ajax中的load方法</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                // 1. 将txt文件中的内容填入div
+                // $('div').load('hello.txt');
+
+                // 2. 将html中的内容填入div
+                // $('div').load("lesson.html");  //将html中所有的信息都插入到div中
+                // $('div').load("lesson.html li:first", "?" + (new Date())); // 显示第一个
+                // $('div').load("lesson.html li:eq(2)");  // 显示第三个
+                // $('div').load('lesson.html li:odd', "?"+(new Date()));
+
+                //3. 将xml数据填入div
+                // $('div').load('who.xml');
+                // $('div').load('who.xml work');
+                // $('div').load('who.xml', function(){
+                //     $(this).css({'color':'red', 'font-size':"28px"})
+                // });
+
+                // 4. 获取json数据填入div
+                // alert('outside')
+                $("div").load('demo.json', function(data){
+                    // alert('inside')
+                    // 将获取到的json字符串解析为js对象
+                    var jsonObj = JSON.parse(data);
+                    // alert(jsonObj)
+                    $(this).empty()
+                            .append("<p>姓名：<span>"+jsonObj.name+"</span></p>")
+                            .append("<p>工资:<span>"+jsonObj.salary+"</span></p>")
+                            .append("<p>lesson:<span>"+jsonObj.lesson[4]+"</span></p>")
+                            .append("<p>siteName:<span>"+jsonObj.website.siteName+"</span></p>")
+                            .append("<p>domain<span>"+jsonObj.website.domain+"</span></p>")
+                })
+                
+            });
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="button">我的信息</button>
+    <div></div>
+</body>
+</html>
