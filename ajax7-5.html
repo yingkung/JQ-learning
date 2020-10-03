@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-4-2 从json文件中获取数据</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+       $(function(){
+        // alert('outside')
+           $("button").click(function(){
+                    // alert('inside')
+                    $.ajax(
+                        {
+                            type:"GET",
+                            url:"demo.json",
+                            data:null,
+                            dataType:"json",
+                            success:function(data){
+                                $("#name").text(data.name);
+                                $("#salary").text(data.salary);
+                                $("#lesson").text(data.lesson[4]);
+                                $("#siteName").text(data.website.siteName);
+                                $("#domain").text(data.website.domain);
+                            }
+                        }
+                )
+           })
+           
+       })
+    </script>
+    <style>
+        span{color:red}
+    </style>
+</head>
+<body>
+    <button type="button" name="button">我的信息</button>
+    <div>
+        <h3>姓名：<span id='name'></span></h3>
+        <h3>工资：<span id='salary'></span></h3>
+        <h3>课程: <span id='lesson'></span></h3>
+        <h3>网站：<span id='siteName'></span></h3>
+        <h3>域名：<span id='domain'></span></h3>
+    </div>
+</body>
+</html>
