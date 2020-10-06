@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-7 ajax中的get方法</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                // 1. 将txt文件中的内容填入div
+                // $.get('hello.txt', function(data){
+                //     $("div").text(data);
+                // })
+
+                //2. 将xml数据填入div
+                // $.get('who.xml', function(data){
+                //     var name = $(data).find("name").text();
+                //     // console.log('name= ', name);
+                //     var sex = $(data).find('sex').text();
+                //     var lesson = $(data).find('lesson').text();
+                //     var job = $(data).find('job').text();
+                //     var work = $(data).find('work').text();
+                //     // console.log('yingkun');
+                //     var html = '<p>'+name+'</p>'+'<p>'+sex+'</p>'+'<p>'+lesson+'</p>'+'<p>'+job+'</p>'+'<p>'+work+'</p>'
+                //     // alert(html);
+                //     // console.log(html);
+                //     // $("div").append(html);
+                //     $('div').html(html);
+                // })
+                
+                // 3. 获取json数据填入div
+                $.get('demo.json', function(data){
+                    // console.log(typeof(data));
+                    // var jsonObj = JSON.parse(data);  // 将json格式字符串转换成js对象
+                    // console.log(typeof(jsonObj));
+                    // 这个data已经是js对象？？？
+                    $('div').empty()
+                            .append('<P>'+data.name+'</p>')
+                            .append('<P>'+data.salary+'</p>')
+                            .append('<P>'+data.lesson+'</p>')
+                            .append('<P>'+data.website.siteName+'</p>')
+                            .append('<P>'+data.website.domain+'</p>');
+                })
+                
+            });
+        })
+    </script> 
+</head>
+<body>
+    <button type="button" name="button">我的信息</button>
+    <div></div>
+</body>
+</html>

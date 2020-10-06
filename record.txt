@@ -1,0 +1,1 @@
+ajax 7-7 : get 中回调函数中的参数data，当获取json文件时，为什么这个data已经是js对象，而不是json串?
